@@ -1,3 +1,4 @@
 {
-  "cSpell.words": ["neetcode"]
+  "cSpell.words": ["ctxt", "foojay", "neetcode", "nums"],
+  "java.compile.nullAnalysis.mode": "automatic"
 }
