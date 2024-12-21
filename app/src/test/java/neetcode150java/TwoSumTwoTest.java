@@ -2,16 +2,16 @@ package neetcode150java;
 
 import org.junit.jupiter.api.Test;
 
-public class TwoIntegerSumTwoTest {
+public class TwoSumTwoTest {
     @Test
     void ItShouldPassTestCaseOne() {
         // Given
         int[] numbers = { 1, 2, 3, 4 };
         int target = 3;
-        TwoIntegerSumTwo twoIntegerSumTwo = new TwoIntegerSumTwo();
+        var app = new TwoSumTwo();
 
         // When
-        int[] result = twoIntegerSumTwo.twoSum(numbers, target);
+        int[] result = app.twoSum(numbers, target);
 
         // Then
         assert result[0] == 1;
@@ -23,7 +23,7 @@ public class TwoIntegerSumTwoTest {
         // Given
         int[] numbers = { 2, 7, 11, 15 };
         int target = 9;
-        TwoIntegerSumTwo twoIntegerSumTwo = new TwoIntegerSumTwo();
+        TwoSumTwo twoIntegerSumTwo = new TwoSumTwo();
 
         // When
         int[] result = twoIntegerSumTwo.twoSum(numbers, target);

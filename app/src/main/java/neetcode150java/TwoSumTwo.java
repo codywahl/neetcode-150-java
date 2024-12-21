@@ -30,7 +30,7 @@ package neetcode150java;
  * -1000 <= target <= 1000
  * 
  */
-public class TwoIntegerSumTwo {
+public class TwoSumTwo {
     public int[] twoSum(int[] numbers, int target) {
         if (numbers.length < 2) {
             return new int[0];
