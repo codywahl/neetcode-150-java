@@ -2,7 +2,7 @@ package neetcode150java;
 
 import org.junit.jupiter.api.Test;
 
-// cspell:ignore OUZODYXAZV, YXAZ
+// cspell:ignore OUZODYXAZV, YXAZ, ADOBECODEBANC
 public class MinimumWindowSubstringTest {
     @Test
     public void ShouldPassTestCase1() {
@@ -29,5 +29,14 @@ public class MinimumWindowSubstringTest {
         String t = "xy";
         String result = minimumWindowSubstring.minWindow(s, t);
         assert (result.equals(""));
+    }
+
+    @Test
+    public void ShouldPassTestCase4() {
+        MinimumWindowSubstring minimumWindowSubstring = new MinimumWindowSubstring();
+        String s = "ADOBECODEBANC";
+        String t = "ABC";
+        String result = minimumWindowSubstring.minWindow(s, t);
+        assert (result.equals("BANC"));
     }
 }

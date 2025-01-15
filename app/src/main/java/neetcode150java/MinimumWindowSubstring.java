@@ -2,6 +2,8 @@ package neetcode150java;
 
 import java.util.HashMap;
 
+import org.checkerframework.checker.units.qual.m;
+
 // cspell:ignore OUZODYXAZV, YXAZ
 /**
  * Minimum Window Substring
@@ -86,13 +88,13 @@ public class MinimumWindowSubstring {
             boolean allCharactersMatched = matchedCharactersCount == neededCharactersCount;
 
             while (allCharactersMatched) {
-                // update the minimum window result
+                // update the minimum window result if needed
                 String currentSubString = s.substring(leftPointer, rightPointer + 1);
                 if (result.isEmpty() || currentSubString.length() < result.length()) {
                     result = currentSubString;
                 }
 
-                // remove the character from the windowCharacters
+                // remove the left character from the windowCharacters
                 char leftCharacter = s.charAt(leftPointer);
                 boolean isLeftCharacterNeeded = neededCharacters.containsKey(leftCharacter);
 
@@ -103,13 +105,12 @@ public class MinimumWindowSubstring {
 
                     int neededCharacterCount = neededCharacters.get(leftCharacter);
 
-                    if (updatedLeftCharacterCount == neededCharacterCount) {
-                        matchedCharactersCount++;
-                    } else if (updatedLeftCharacterCount < neededCharacterCount) {
+                    if (updatedLeftCharacterCount < neededCharacterCount) {
                         matchedCharactersCount--;
                     }
                 }
 
+                // move the left pointer to the right
                 leftPointer++;
 
                 // update allCharactersMatched
