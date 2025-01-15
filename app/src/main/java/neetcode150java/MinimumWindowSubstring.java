@@ -64,8 +64,8 @@ public class MinimumWindowSubstring {
 
         neededCharactersCount = neededCharacters.size();
 
-        for (int rightPointer = 0; rightPointer < tLength; rightPointer++) {
-            char currentCharacter = t.charAt(rightPointer);
+        for (int rightPointer = 0; rightPointer < sLength; rightPointer++) {
+            char currentCharacter = s.charAt(rightPointer);
 
             boolean isCharacterNeeded = neededCharacters.containsKey(currentCharacter);
 
@@ -98,15 +98,14 @@ public class MinimumWindowSubstring {
 
                 if (isLeftCharacterNeeded) {
                     int leftCharacterCount = windowCharacters.get(leftCharacter);
-                    windowCharacters.put(leftCharacter, leftCharacterCount - 1);
+                    int updatedLeftCharacterCount = leftCharacterCount - 1;
+                    windowCharacters.put(leftCharacter, updatedLeftCharacterCount);
 
                     int neededCharacterCount = neededCharacters.get(leftCharacter);
 
-                    if (leftCharacterCount == neededCharacterCount) {
+                    if (updatedLeftCharacterCount == neededCharacterCount) {
                         matchedCharactersCount++;
-                    } else if (leftCharacterCount - 1 == neededCharacterCount) {
-                        matchedCharactersCount--;
-                    } else if (leftCharacterCount + 1 < neededCharacterCount) {
+                    } else if (updatedLeftCharacterCount < neededCharacterCount) {
                         matchedCharactersCount--;
                     }
                 }
