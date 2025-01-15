@@ -1,5 +1,7 @@
 package neetcode150java;
 
+import java.util.HashMap;
+
 // cspell:ignore OUZODYXAZV, YXAZ
 /**
  * Minimum Window Substring
@@ -37,6 +39,85 @@ package neetcode150java;
  */
 public class MinimumWindowSubstring {
     public String minWindow(String s, String t) {
+        if (s == null || t == null) {
+            return "";
+        }
 
+        int sLength = s.length();
+        int tLength = t.length();
+
+        if (sLength < tLength || sLength == 0 || tLength == 0) {
+            return "";
+        }
+
+        String result = "";
+        int leftPointer = 0;
+        int matchedCharactersCount = 0;
+        int neededCharactersCount = 0;
+        HashMap<Character, Integer> neededCharacters = new HashMap<>();
+        HashMap<Character, Integer> windowCharacters = new HashMap<>();
+
+        // Add all characters of t to neededCharacters
+        for (char currentCharacter : t.toCharArray()) {
+            neededCharacters.put(currentCharacter, neededCharacters.getOrDefault(currentCharacter, 0) + 1);
+        }
+
+        neededCharactersCount = neededCharacters.size();
+
+        for (int rightPointer = 0; rightPointer < tLength; rightPointer++) {
+            char currentCharacter = t.charAt(rightPointer);
+
+            boolean isCharacterNeeded = neededCharacters.containsKey(currentCharacter);
+
+            // If the character is needed, add it to the windowCharacters
+            // and check if the character count is equal to the needed count
+            // If it is, increment the matchedCharactersCount
+            if (isCharacterNeeded) {
+                windowCharacters.put(currentCharacter, windowCharacters.getOrDefault(currentCharacter, 0) + 1);
+
+                int characterCount = windowCharacters.get(currentCharacter);
+                int neededCharacterCount = neededCharacters.get(currentCharacter);
+
+                if (characterCount == neededCharacterCount) {
+                    matchedCharactersCount++;
+                }
+            }
+
+            boolean allCharactersMatched = matchedCharactersCount == neededCharactersCount;
+
+            while (allCharactersMatched) {
+                // update the minimum window result
+                String currentSubString = s.substring(leftPointer, rightPointer + 1);
+                if (result.isEmpty() || currentSubString.length() < result.length()) {
+                    result = currentSubString;
+                }
+
+                // remove the character from the windowCharacters
+                char leftCharacter = s.charAt(leftPointer);
+                boolean isLeftCharacterNeeded = neededCharacters.containsKey(leftCharacter);
+
+                if (isLeftCharacterNeeded) {
+                    int leftCharacterCount = windowCharacters.get(leftCharacter);
+                    windowCharacters.put(leftCharacter, leftCharacterCount - 1);
+
+                    int neededCharacterCount = neededCharacters.get(leftCharacter);
+
+                    if (leftCharacterCount == neededCharacterCount) {
+                        matchedCharactersCount++;
+                    } else if (leftCharacterCount - 1 == neededCharacterCount) {
+                        matchedCharactersCount--;
+                    } else if (leftCharacterCount + 1 < neededCharacterCount) {
+                        matchedCharactersCount--;
+                    }
+                }
+
+                leftPointer++;
+
+                // update allCharactersMatched
+                allCharactersMatched = matchedCharactersCount == neededCharactersCount;
+            }
+        }
+
+        return result;
     }
 }
