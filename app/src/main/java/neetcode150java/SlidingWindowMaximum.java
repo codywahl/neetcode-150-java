@@ -1,5 +1,7 @@
 package neetcode150java;
 
+import java.util.Deque;
+
 /**
  * Sliding Window Maximum
  * LeetCode 239
@@ -31,5 +33,34 @@ package neetcode150java;
  * 1 <= k <= nums.length
  */
 public class SlidingWindowMaximum {
+    public int[] maxSlidingWindow(int[] nums, int k) {
+        int[] result = new int[nums.length - k + 1];
+        Deque<Integer> deque = new java.util.LinkedList<>();
+        int leftPointer = 0;
+        int rightPointer = 0;
 
+        while (rightPointer < nums.length) {
+            // remove values from the deque that are smaller than the current value
+            while (!deque.isEmpty() && nums[rightPointer] > nums[deque.peekLast()]) {
+                // pollLast removes the last element
+                deque.pollLast();
+            }
+
+            deque.addLast(rightPointer);
+
+            if (leftPointer > deque.getFirst()) {
+                deque.pollFirst();
+            }
+
+            if ((rightPointer + 1) >= k) {
+                result[leftPointer] = (nums[deque.getFirst()]);
+                leftPointer++;
+
+            }
+
+            rightPointer++;
+        }
+
+        return result;
+    }
 }
