@@ -1,8 +1,6 @@
-package neetcode150java;
+package neetcode150java.SlidingWindow;
 
 import org.junit.jupiter.api.Test;
-
-import neetcode150java.SlidingWindow.SlidingWindowMaximum;
 
 public class SlidingWindowMaximumTest {
     @Test

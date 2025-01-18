@@ -1,12 +1,10 @@
-package neetcode150java;
+package neetcode150java.ArraysAndHashing;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
-
-import neetcode150java.ArraysAndHashing.EncodeAndDecodeStrings;
 
 // @cspell:ignore neet
 public class EncodeAndDecodeStringTest {

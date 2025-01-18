@@ -1,9 +1,7 @@
-package neetcode150java;
+package neetcode150java.ArraysAndHashing;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
-
-import neetcode150java.ArraysAndHashing.GroupAnagram;
 
 public class GroupAnagramTest {
     @Test

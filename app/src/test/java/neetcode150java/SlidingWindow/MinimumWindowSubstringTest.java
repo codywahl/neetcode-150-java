@@ -1,10 +1,9 @@
-package neetcode150java;
+package neetcode150java.SlidingWindow;
 
 import org.junit.jupiter.api.Test;
 
-import neetcode150java.SlidingWindow.MinimumWindowSubstring;
-
 // cspell:ignore OUZODYXAZV, YXAZ, ADOBECODEBANC
+
 public class MinimumWindowSubstringTest {
     @Test
     public void ShouldPassTestCase1() {

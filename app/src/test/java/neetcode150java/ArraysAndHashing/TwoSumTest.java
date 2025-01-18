@@ -1,10 +1,8 @@
-package neetcode150java;
+package neetcode150java.ArraysAndHashing;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
-
-import neetcode150java.ArraysAndHashing.TwoSum;
 
 public class TwoSumTest {
     // Example 1:

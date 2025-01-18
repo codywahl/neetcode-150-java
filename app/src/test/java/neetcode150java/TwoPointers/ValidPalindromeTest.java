@@ -1,8 +1,6 @@
-package neetcode150java;
+package neetcode150java.TwoPointers;
 
 import org.junit.jupiter.api.Test;
-
-import neetcode150java.TwoPointers.ValidPalindrome;
 
 public class ValidPalindromeTest {
     @Test

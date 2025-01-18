@@ -1,11 +1,9 @@
-package neetcode150java;
+package neetcode150java.ArraysAndHashing;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
-
-import neetcode150java.ArraysAndHashing.ContainsDuplicate;
 
 public class ContainsDuplicateTest {
 

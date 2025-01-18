@@ -1,8 +1,6 @@
-package neetcode150java;
+package neetcode150java.ArraysAndHashing;
 
 import org.junit.jupiter.api.Test;
-
-import neetcode150java.ArraysAndHashing.LongestConsecutiveSequence;
 
 public class LongestConsecutiveSequenceTest {
     @Test

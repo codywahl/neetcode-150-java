@@ -1,12 +1,11 @@
-package neetcode150java;
+package neetcode150java.SlidingWindow;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-import neetcode150java.SlidingWindow.LongestRepeatingCharacterReplacement;
-
 // @cspell:ignore AAABABB, ABBB, XYYX
+
 public class LongestRepeatingCharacterReplacementTest {
     @Test
     public void shouldPassTestCase1() {

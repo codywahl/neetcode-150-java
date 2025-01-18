@@ -1,10 +1,8 @@
-package neetcode150java;
+package neetcode150java.ArraysAndHashing;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 import org.junit.jupiter.api.Test;
-
-import neetcode150java.ArraysAndHashing.TopKFrequentElements;
 
 public class TopKFrequentElementsTest {
     @Test

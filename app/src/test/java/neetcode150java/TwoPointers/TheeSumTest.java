@@ -1,10 +1,8 @@
-package neetcode150java;
+package neetcode150java.TwoPointers;
 
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
-
-import neetcode150java.TwoPointers.ThreeSum;
 
 public class TheeSumTest {
     @Test
