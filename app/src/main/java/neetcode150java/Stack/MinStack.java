@@ -42,26 +42,24 @@ import java.util.Stack;
 public class MinStack {
     Stack<Integer> valueStack;
     Stack<Integer> minStack;
-    int currentMinimum;
     int length;
 
     public MinStack() {
         this.valueStack = new Stack<>();
         this.minStack = new Stack<>();
-        this.currentMinimum = Integer.MAX_VALUE;
         this.length = 0;
     }
 
     // void push(int val) pushes the element val onto the stack.
     public void push(int value) {
         if (length == 0) {
-            currentMinimum = value;
+            minStack.push(value);
         } else {
-            currentMinimum = Math.min(currentMinimum, value);
+            minStack.push(Math.min(minStack.peek(), value));
         }
 
         valueStack.push(value);
-        minStack.push(currentMinimum);
+
         length++;
     }
 
@@ -83,7 +81,7 @@ public class MinStack {
     }
 
     // int getMin() retrieves the minimum element in the stack.
-    public int getCurrentMinimum() {
+    public int getMin() {
         if (length > 0) {
             return minStack.peek();
         } else
