@@ -1,4 +1,4 @@
-package neetcode150java;
+package neetcode150java.TwoPointers;
 
 // @cspell:ignore wasitacaroracatisaw, tabacat
 /**

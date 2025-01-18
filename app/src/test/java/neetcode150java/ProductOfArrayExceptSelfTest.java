@@ -2,6 +2,8 @@ package neetcode150java;
 
 import org.junit.jupiter.api.Test;
 
+import neetcode150java.ArraysAndHashing.ProductOfArrayExceptSelf;
+
 public class ProductOfArrayExceptSelfTest {
     @Test
     void testCase1() {

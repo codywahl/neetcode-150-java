@@ -2,6 +2,8 @@ package neetcode150java;
 
 import org.junit.jupiter.api.Test;
 
+import neetcode150java.SlidingWindow.BestTimeToBuyAndSellStock;
+
 public class BestTimeToBuyAndSellStockTest {
     @Test
     public void shouldPassTestCase1() {

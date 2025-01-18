@@ -6,6 +6,8 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
+import neetcode150java.ArraysAndHashing.EncodeAndDecodeStrings;
+
 // @cspell:ignore neet
 public class EncodeAndDecodeStringTest {
     EncodeAndDecodeStrings encodeAndDecodeStrings = new EncodeAndDecodeStrings();

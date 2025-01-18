@@ -1,4 +1,4 @@
-package neetcode150java;
+package neetcode150java.TwoPointers;
 
 /**
  * Container With Most Water

@@ -5,6 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
+import neetcode150java.ArraysAndHashing.ContainsDuplicate;
+
 public class ContainsDuplicateTest {
 
     @Test

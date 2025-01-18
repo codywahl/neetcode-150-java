@@ -1,4 +1,4 @@
-package neetcode150java;
+package neetcode150java.SlidingWindow;
 
 // @cspell:ignore NeetCoin
 /**

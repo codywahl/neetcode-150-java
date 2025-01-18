@@ -5,6 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
+import neetcode150java.ArraysAndHashing.ValidAnagram;
+
 // cspell:ignore racecar, carrace
 
 public class ValidAnagramTest {

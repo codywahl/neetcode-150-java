@@ -4,6 +4,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
+import neetcode150java.ArraysAndHashing.TwoSum;
+
 public class TwoSumTest {
     // Example 1:
     // Input: nums = [3,4,5,6], target = 7

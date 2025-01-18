@@ -4,6 +4,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
+import neetcode150java.SlidingWindow.LongestRepeatingCharacterReplacement;
+
 // @cspell:ignore AAABABB, ABBB, XYYX
 public class LongestRepeatingCharacterReplacementTest {
     @Test

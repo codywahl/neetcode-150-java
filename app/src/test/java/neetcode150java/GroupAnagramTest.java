@@ -3,6 +3,8 @@ package neetcode150java;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
+import neetcode150java.ArraysAndHashing.GroupAnagram;
+
 public class GroupAnagramTest {
     @Test
     void example1ShouldReturnTheExpectedValues() {

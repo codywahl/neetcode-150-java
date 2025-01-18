@@ -2,6 +2,8 @@ package neetcode150java;
 
 import org.junit.jupiter.api.Test;
 
+import neetcode150java.SlidingWindow.PermutationInString;
+
 // @cspell:ignore lecaabee, lecabee
 
 public class PermutationInStringTest {

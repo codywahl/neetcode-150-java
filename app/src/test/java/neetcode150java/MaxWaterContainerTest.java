@@ -2,6 +2,8 @@ package neetcode150java;
 
 import org.junit.jupiter.api.Test;
 
+import neetcode150java.TwoPointers.MaxWaterContainer;
+
 public class MaxWaterContainerTest {
     @Test
     public void shouldPassTestCase1() {

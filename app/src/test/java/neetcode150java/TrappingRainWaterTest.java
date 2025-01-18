@@ -2,6 +2,8 @@ package neetcode150java;
 
 import org.junit.jupiter.api.Test;
 
+import neetcode150java.TwoPointers.TrappingRainWater;
+
 public class TrappingRainWaterTest {
     @Test
     public void shouldPassTestCase1() {

@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
+import neetcode150java.TwoPointers.ThreeSum;
+
 public class TheeSumTest {
     @Test
     void ItShouldPassTestCaseOne() {
