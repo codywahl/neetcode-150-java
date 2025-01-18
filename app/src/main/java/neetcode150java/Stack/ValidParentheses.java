@@ -39,7 +39,7 @@ import java.util.Stack;
 public class ValidParentheses {
     public boolean isValid(String s) {
         // If the length of the string is odd, it cannot be a valid string
-        //int leetcodeMaxLength = 10000;
+        // int leetcodeMaxLength = 10000;
         int neetcodeMaxLength = 1000;
 
         if (s.length() % 2 != 0 || s.length() > neetcodeMaxLength) {
@@ -68,6 +68,10 @@ public class ValidParentheses {
             }
         }
 
-        return true;
+        if (stack.isEmpty()) {
+            return true;
+        }
+
+        return false;
     }
 }
