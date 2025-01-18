@@ -1,5 +1,7 @@
 package neetcode150java.Stack;
 
+import java.util.Stack;
+
 /**
  * Valid Parentheses
  * LeetCode 20
@@ -17,17 +19,16 @@ package neetcode150java.Stack;
  * Example 1:
  * 
  * Input: s = "[]"
- * 
  * Output: true
+ * 
  * Example 2:
  * 
  * Input: s = "([{}])"
- * 
  * Output: true
+ * 
  * Example 3:
  * 
  * Input: s = "[(])"
- * 
  * Output: false
  * Explanation: The brackets are not closed in the correct order.
  * 
@@ -37,6 +38,36 @@ package neetcode150java.Stack;
  */
 public class ValidParentheses {
     public boolean isValid(String s) {
-        return false;
+        // If the length of the string is odd, it cannot be a valid string
+        //int leetcodeMaxLength = 10000;
+        int neetcodeMaxLength = 1000;
+
+        if (s.length() % 2 != 0 || s.length() > neetcodeMaxLength) {
+            return false;
+        }
+
+        Stack<Character> stack = new Stack<>();
+        for (char currentCharacter : s.toCharArray()) {
+            if (currentCharacter == '(' || currentCharacter == '{' || currentCharacter == '[') {
+                stack.push(currentCharacter);
+            } else {
+                if (stack.isEmpty()) {
+                    return false;
+                }
+
+                char poppedCharacter = stack.pop();
+                if (currentCharacter == ')' && poppedCharacter != '(') {
+                    return false;
+                }
+                if (currentCharacter == '}' && poppedCharacter != '{') {
+                    return false;
+                }
+                if (currentCharacter == ']' && poppedCharacter != '[') {
+                    return false;
+                }
+            }
+        }
+
+        return true;
     }
 }
