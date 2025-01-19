@@ -1,5 +1,7 @@
 package neetcode150java.Stack;
 
+import java.util.Stack;
+
 /**
  * Evaluate Reverse Polish Notation
  * LeetCode #150
@@ -26,5 +28,39 @@ package neetcode150java.Stack;
  * the range [-100, 100].
  */
 public class EvaluateReversePolishNotation {
+    public int evalRPN(String[] tokens) {
+        if (tokens.length < 1 || tokens.length > 1000) {
+            return 0;
+        }
 
+        Stack<Integer> stack = new Stack<>();
+
+        for (String token : tokens) {
+            if (token.equals("+")) {
+                int operand2 = stack.pop();
+                int operand1 = stack.pop();
+
+                stack.push(operand1 + operand2);
+            } else if (token.equals("-")) {
+                int operand2 = stack.pop();
+                int operand1 = stack.pop();
+
+                stack.push(operand1 - operand2);
+            } else if (token.equals("*")) {
+                int operand2 = stack.pop();
+                int operand1 = stack.pop();
+
+                stack.push(operand1 * operand2);
+            } else if (token.equals("/")) {
+                int operand2 = stack.pop();
+                int operand1 = stack.pop();
+
+                stack.push(operand1 / operand2);
+            } else {
+                stack.push(Integer.parseInt(token));
+            }
+        }
+
+        return stack.pop();
+    }
 }
