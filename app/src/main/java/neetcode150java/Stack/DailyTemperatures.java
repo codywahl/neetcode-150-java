@@ -35,10 +35,21 @@ public class DailyTemperatures {
         int[] result = new int[temperatures.length];
         Stack<Integer> stack = new Stack<>();
 
+        // Iterate through the temperatures array
         for (int i = 0; i < temperatures.length; i++) {
+            // If the stack is empty, push the current index because there are no previous
+            // temperatures
             if (i == 0) {
                 stack.push(i);
             } else {
+                // If the current temperature is greater than the temperature at the index at
+                // the top of the stack, that means we found a day with a warmer temperature.
+                // To figure out how many days it took to find a warmer temperature, we need to
+                // calculate the difference between the current index and the index at the top
+                // of the stack.
+                // We keep popping the stack until we find a temperature that is greater than
+                // the current temperature.
+
                 int currentTemp = temperatures[i];
 
                 while (!stack.isEmpty() && currentTemp > temperatures[stack.peek()]) {
@@ -46,6 +57,8 @@ public class DailyTemperatures {
                     result[previousIndex] = i - previousIndex;
                 }
 
+                // Push the current index onto the stack because we need to find the next warmer
+                // temperature for this day
                 stack.push(i);
             }
         }
