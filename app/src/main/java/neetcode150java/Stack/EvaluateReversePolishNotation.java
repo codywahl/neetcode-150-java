@@ -27,6 +27,27 @@ import java.util.Stack;
  * tokens[i] is "+", "-", "*", or "/", or a string representing an integer in
  * the range [-100, 100].
  */
+/**
+ * Explanation:
+ * 
+ * Reverse Polish Notation (RPN) is a mathematical notation in which every
+ * operator follows all of its operands. For example, the infix expression
+ * (1 + 2) * 3 can be written as 1 2 + 3 * in RPN.
+ * 
+ * To evaluate an RPN expression, we can use a stack to store the operands.
+ * 
+ * We loop over the tokens in the array.
+ * If the token is an operator, we pop the top two elements from the stack and
+ * perform the operation.
+ * 
+ * If the token is an operand, we push it onto the stack.
+ * 
+ * Finally, we return the top element of the stack, which is the result of the
+ * expression.
+ * 
+ * Time complexity: O(n)
+ * Space complexity: O(n)
+ */
 public class EvaluateReversePolishNotation {
     public int evalRPN(String[] tokens) {
         if (tokens.length < 1 || tokens.length > 1000) {
