@@ -52,6 +52,18 @@ import java.util.List;
  * 0 <= position[i] < target
  * All the values of position are unique.
  */
+/**
+ * Explanation:
+ * 
+ * 1. Create a list of cars and sort them in descending order of their position.
+ * 2. Initialize the number of fleets to 0 and the time to 0.
+ * 3. Iterate through the cars and calculate the arrival time of each car.
+ * 4. If the arrival time is greater than the current time, then it means that
+ * the car will not be able to catch up with the car ahead of it.
+ * 
+ * Time Complexity: O(n log n)
+ * Space Complexity: O(n)
+ */
 public class CarFleet {
     public int carFleet(int target, int[] position, int[] speed) {
         List<Car> cars = new ArrayList<>();
