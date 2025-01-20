@@ -1,5 +1,9 @@
 package neetcode150java.Stack;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 /**
  * Car Fleet
  * Leetcode 853
@@ -51,5 +55,39 @@ package neetcode150java.Stack;
  * All the values of position are unique.
  */
 public class CarFleet {
+    public int carFleet(int target, int[] position, int[] speed) {
+        List<Car> cars = new ArrayList<>();
 
+        for (int i = 0; i < position.length; i++) {
+            cars.add(new Car(position[i], speed[i]));
+        }
+
+        Collections.sort(cars, (a, b) -> Integer.compare(b.position, a.position));
+
+        int fleets = 0;
+        double time = 0;
+
+        for (Car car : cars) {
+            double arrivalTime = (double) (target - car.position) / car.speed;
+
+            // If arrival time is greater than the current time, then it means that the car
+            // will not be able to catch up with the car ahead of it.
+            if (arrivalTime > time) {
+                time = arrivalTime;
+                fleets++;
+            }
+        }
+
+        return fleets;
+    }
+}
+
+class Car {
+    int position;
+    int speed;
+
+    public Car(int position, int speed) {
+        this.position = position;
+        this.speed = speed;
+    }
 }
