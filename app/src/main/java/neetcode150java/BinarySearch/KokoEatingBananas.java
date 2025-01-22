@@ -1,9 +1,5 @@
 package neetcode150java.BinarySearch;
 
-import java.util.Arrays;
-
-import org.checkerframework.checker.units.qual.min;
-
 // cspell:ignore Koko
 /**
  * Koko Eating Bananas
@@ -41,19 +37,27 @@ import org.checkerframework.checker.units.qual.min;
  * 1 <= piles[i] <= 1,000,000,000
  */
 public class KokoEatingBananas {
-    public int minEatingSpeed(int[] piles, int h) {
-        // 1) get minimum bananas per hour rate
-        // which is determined by hours / piles
-        // 2) get the maximum number of bananas per hour
-        // which is determined by the maximum number of bananas in the piles
-        // because there is no reason to eat slower than the maximum number of bananas
+    // 1) get minimum bananas per hour rate
+    // which is determined by ceil(sum of all bananas in the piles / h)
+    // 2) get the maximum number of bananas per hour
+    // which is determined by the maximum number of bananas in the piles
+    // because there is no reason to eat slower than the maximum number of bananas
 
-        // 3) binary search between the minimum and maximum number of bananas per hour
-        // to find the minimum number of bananas per hour that can be eaten within h
-        // hours
+    // 3) binary search between the minimum and maximum number of bananas per hour
+    // to find the minimum number of bananas per hour that can be eaten within h
+    // hours
+    public int minEatingSpeed(int[] piles, int h) {
+        if (piles == null || piles.length == 0) {
+            return 0;
+        }
+
+        int totalBananas = 0;
+        for (int bananasInPile : piles) {
+            totalBananas += bananasInPile;
+        }
 
         // BPH = bananas per hour
-        int minimumBPH = h / piles.length;
+        int minimumBPH = (int) Math.ceil((double) totalBananas) / h;
         int maximumBPH = minimumBPH;
         int maxHours = h;
 

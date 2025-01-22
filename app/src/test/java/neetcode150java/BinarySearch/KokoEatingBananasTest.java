@@ -41,4 +41,16 @@ public class KokoEatingBananasTest {
 
         assertEquals(expected, actual);
     }
+
+    // piles=[312884470]
+    // h=312884469
+    @Test
+    public void shouldPassTestCase3() {
+        int[] piles = { 312884470 };
+        int h = 312884469;
+        int expected = 2;
+        int actual = kokoEatingBananas.minEatingSpeed(piles, h);
+
+        assertEquals(expected, actual);
+    }
 }
