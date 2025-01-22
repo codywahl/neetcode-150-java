@@ -13,13 +13,13 @@ package neetcode150java.BinarySearch;
  * Example 1:
  * 
  * Input: nums = [-1,0,2,4,6,8], target = 4
- * 
  * Output: 3
+ * 
  * Example 2:
  * 
  * Input: nums = [-1,0,2,4,6,8], target = 3
- * 
  * Output: -1
+ * 
  * Constraints:
  * 
  * 1 <= nums.length <= 10000.
@@ -27,5 +27,26 @@ package neetcode150java.BinarySearch;
  * 
  */
 public class BinarySearch {
+    public int search(int[] nums, int target) {
+        if (nums == null || nums.length == 0) {
+            return -1;
+        }
 
+        int left = 0;
+        int right = nums.length - 1;
+
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+
+            if (nums[mid] == target) {
+                return mid;
+            } else if (nums[mid] < target) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+
+        return -1;
+    }
 }
