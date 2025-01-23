@@ -65,18 +65,14 @@ public class SearchInRotatedSortedArray {
             int leftValue = nums[leftIndex];
             int rightValue = nums[rightIndex];
 
-            if (target < midValue) {
-                // if target is less than the left value and the mid value
-                // it means target is in the right half
-                if (target < leftValue) {
+            if (leftValue <= midValue) {
+                if (target > midValue || target < leftValue) {
                     leftIndex = midIndex + 1;
                 } else {
                     rightIndex = midIndex - 1;
                 }
             } else {
-                // if target is greater than the right value and the mid value
-                // it means target is in the left half
-                if (target > rightValue) {
+                if (target < midValue || target > rightValue) {
                     rightIndex = midIndex - 1;
                 } else {
                     leftIndex = midIndex + 1;
