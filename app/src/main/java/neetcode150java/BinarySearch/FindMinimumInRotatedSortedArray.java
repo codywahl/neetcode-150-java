@@ -10,6 +10,13 @@ package neetcode150java.BinarySearch;
  * 
  * [3,4,5,6,1,2] if it was rotated 4 times.
  * [1,2,3,4,5,6] if it was rotated 6 times.
+ * 1,2,3,4,5,6
+ * 6,1,2,3,4,5
+ * 5,6,1,2,3,4
+ * 4,5,6,1,2,3
+ * 3,4,5,6,1,2
+ * 2,3,4,5,6,1
+ * 1,2,3,4,5,6
  * Notice that rotating the array 4 times moves the last four elements of the
  * array to the beginning. Rotating the array 6 times produces the original
  * array.
@@ -43,6 +50,38 @@ package neetcode150java.BinarySearch;
  */
 public class FindMinimumInRotatedSortedArray {
     public int findMin(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
 
+        int left = 0;
+        int right = nums.length - 1;
+
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+
+            int midValue = nums[mid];
+            int midLeftValue = nums[mid - 1];
+            int midRightValue = nums[mid + 1];
+            int leftValue = nums[left];
+            int rightValue = nums[right];
+
+            if (midValue < midLeftValue && midValue < midRightValue) {
+                // mid is the minimum
+                return midValue;
+            } else if (midValue > midRightValue) {
+                // minimum is to the immediate right
+                return midRightValue;
+            } else if (rightValue < leftValue) {
+                // minimum is to the right
+                left = mid + 1;
+            } else {
+                // minimum is to the left
+                right = mid - 1;
+            }
+
+        }
+
+        return nums[left];
     }
 }
