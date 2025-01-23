@@ -54,16 +54,21 @@ public class FindMinimumInRotatedSortedArray {
             return 0;
         }
 
+        int length = nums.length;
+
+        if (length == 1) {
+            return nums[0];
+        }
+
         int left = 0;
-        int right = nums.length - 1;
+        int right = length - 1;
 
         while (left < right) {
             int mid = left + (right - left) / 2;
 
             int midValue = nums[mid];
-            int midLeftValue = nums[mid - 1];
-            int midRightValue = nums[mid + 1];
-            int leftValue = nums[left];
+            int midLeftValue = (mid - 1 >= 0) ? nums[mid - 1] : mid;
+            int midRightValue = (mid + 1 < length) ? nums[mid + 1] : mid;
             int rightValue = nums[right];
 
             if (midValue < midLeftValue && midValue < midRightValue) {
@@ -72,14 +77,13 @@ public class FindMinimumInRotatedSortedArray {
             } else if (midValue > midRightValue) {
                 // minimum is to the immediate right
                 return midRightValue;
-            } else if (rightValue < leftValue) {
-                // minimum is to the right
-                left = mid + 1;
-            } else {
+            } else if (midValue < rightValue) {
                 // minimum is to the left
                 right = mid - 1;
+            } else {
+                // minimum is to the right
+                left = mid + 1;
             }
-
         }
 
         return nums[left];
